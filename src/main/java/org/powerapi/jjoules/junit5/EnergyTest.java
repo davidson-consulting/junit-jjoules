@@ -1,4 +1,4 @@
-package org.powerapi.jjoules.junit;
+package org.powerapi.jjoules.junit5;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

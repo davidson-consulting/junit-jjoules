@@ -1,7 +1,7 @@
 /**
  *
  */
-package org.powerapi.jjoules.junit;
+package org.powerapi.jjoules.utils;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -32,9 +32,9 @@ public class ReportRegister {
         }
     }
 
-    public void save(String className, Method testMethod, Map<String, Long> report) {
+    public void save(String className, String testMethodName, Map<String, Long> report) {
         final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        final File file = new File(reportsDir, className + "-" + testMethod.getName() + JSON_EXTENSION);
+        final File file = new File(reportsDir, className + "-" + testMethodName + JSON_EXTENSION);
         if (!file.exists()) {
             try {
                 if (!file.createNewFile()) {

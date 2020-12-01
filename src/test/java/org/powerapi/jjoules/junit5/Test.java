@@ -1,4 +1,4 @@
-package org.powerapi.jjoules.junit;
+package org.powerapi.jjoules.junit5;
 
 import org.powerapi.jjoules.AbstractTest;
 

@@ -1,6 +1,6 @@
 package org.powerapi.jjoules;
 
-import org.powerapi.jjoules.junit.EnergyTest;
+import org.powerapi.jjoules.junit5.EnergyTest;
 
 /**
  * @author Benjamin DANGLOT

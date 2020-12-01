@@ -1,0 +1,17 @@
+dist: trusty
+language: java
+sudo: required
+jdk: openjdk11
+
+cache:
+  directories:
+  - $HOME/.m2
+script:
+  - mvn clean install
+
+#after_success:
+#  - ./.travis/travis-deploy.sh # TO BE DONE, WE WOULD LIKE TO DEPLOY JJoules-JUnit in maven
+
+branch:
+  only:
+  - master
