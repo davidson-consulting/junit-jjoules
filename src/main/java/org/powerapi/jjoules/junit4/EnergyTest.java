@@ -1,6 +1,7 @@
 package org.powerapi.jjoules.junit4;
 
 import org.powerapi.jjoules.EnergySample;
+import org.powerapi.jjoules.jni.Perf;
 import org.powerapi.jjoules.rapl.RaplDevice;
 import org.powerapi.jjoules.utils.ReportRegister;
 
@@ -23,6 +24,8 @@ public class EnergyTest {
 
     private ReportRegister register = new ReportRegister();
 
+    private Perf perf = new Perf();
+
     private static EnergyTest _get() {
         if (_instance == null) {
             _instance = new EnergyTest();
@@ -35,11 +38,14 @@ public class EnergyTest {
         instance.currentTestClassName = className;
         instance.currentTestMethodName = testMethodName;
         instance.currentEnergySample = RaplDevice.RAPL.recordEnergy();
+        instance.perf.start();
     }
 
     public static void afterTest() {
         final EnergyTest instance = _get();
+        final long instructions = instance.perf.stop();
         final Map<String, Long> report = instance.currentEnergySample.stop();
+        report.put("instruction", instructions);
         instance.register.save(instance.currentTestClassName, instance.currentTestMethodName, report);
         instance.reset();
     }
