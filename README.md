@@ -153,3 +153,12 @@ In your project root execute this command to run all tests
 Now, you will get the energy consumption reports of all energy tests in directory `/target/jjoules-reports` only one test in one json file.
 
 You can also see the call graph files in this directory `/target/call-graph` if you did not change the directory path before in plugins configuration.
+
+## Developing the lib for JNI and retrieve instructions
+
+```sh
+javac -h javac -h . src/main/java/org/powerapi/jjoules/jni/Perf.java
+mv org_powerapi_jjoules_jni_Perf.h src/main/c/org_powerapi_jjoules_jni_Perf.h
+```
+
+Modify the corresponding `.cpp` file. Then run the commande `make` from the folder `src/main/c/` to compile and build the shared library.
