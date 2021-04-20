@@ -21,3 +21,8 @@ buildNumber.properties
 # IDEA 
 .idea/
 *.iml
+
+src/main/c/lib
+**/**/.o
+**/**/.so
+**/**/.vscode
