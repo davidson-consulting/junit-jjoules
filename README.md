@@ -161,4 +161,14 @@ javac -h javac -h . src/main/java/org/powerapi/jjoules/jni/Perf.java
 mv org_powerapi_jjoules_jni_Perf.h src/main/c/org_powerapi_jjoules_jni_Perf.h
 ```
 
-Modify the corresponding `.cpp` file. Then run the commande `make` from the folder `src/main/c/` to compile and build the shared library.
+Modify the corresponding `.cpp` file. 
+
+You must set your JAVA_HOME correctly.
+Then run the commande `make` from the folder `src/main/c/` to compile and build the shared library.
+
+Run the following commands to add the new shared lib in your paths:
+
+```shell
+LD_LIBRARY_PATH=<absolute-path>/junit-jjoules/src/main/c/lib/
+export LD_LIBRARY_PATH
+```
