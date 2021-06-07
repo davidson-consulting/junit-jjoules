@@ -22,6 +22,13 @@ Then, clone and install `junit-jjoules` with
 
 ## CONFIGURATIONS
 
+Allow reading perf events:
+
+```sh
+sudo -i
+echo -1 > /proc/sys/kernel/perf_event_paranoid
+```
+
 Add this dependency to your *pom.xml* which will allow you to use this project in your own project
 
 	<dependency>
